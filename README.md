@@ -31,7 +31,6 @@ bundle exec soloist
 1. `sprout-mongo`
 1. `sprout-mongo::install_mongo`
 1. `sprout-mongo::add_launch_agent`
-1. `sprout-mongo::create_current_user_db`
 
 ## Contributing
 

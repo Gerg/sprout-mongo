@@ -1,16 +1,29 @@
 require 'spec_helper'
 
-describe 'sprout-exemplar' do
+describe 'sprout-mongo' do
   before :all do
-    expect(File).not_to be_exists("#{ENV['HOME']}/exemplar")
+    system('mongo --eval "printjson( db.c.findOne() )" &> /dev/null') && fail('mongodb is already installed')
     expect(system('soloist')).to eq(true)
   end
 
-  it 'creates a file in the home directory' do
-    expect(File).to be_exists("#{ENV['HOME']}/exemplar")
+  it 'runs mongo on the default port' do
+    expect {
+      TCPSocket.open('localhost', 27_017).close
+    }.not_to raise_error
+
+    expect(system('mongo --eval "printjson( db.c.findOne() )" &> /dev/null')).to be_true
   end
 
-  it 'is owned by the current user not root' do
-    expect(File.stat("#{ENV['HOME']}/exemplar")).to be_owned
+  it 'is managed by launchd' do
+    expect(system('launchctl list homebrew.mxcl.mongodb &> /dev/null')).to be_true
   end
+
+  # it 'creates a database for the current user' do
+  #   db_name = ENV['USER']
+  #   expect(system("psql -U #{db_name} -c 'select 1' #{db_name} &> /dev/null")).to be_true
+  # end
+
+  # it 'creates a postgres user' do
+  #   expect(system('psql -U postgres -c "select 1" &> /dev/null')).to be_true
+  # end
 end
