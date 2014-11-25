@@ -1,6 +1,6 @@
 # sprout-Mongo cookbook
 
-[![Build Status](https://travis-ci.org/pivotal-sprout/sprout-exemplar.png?branch=master)](https://travis-ci.org/pivotal-sprout/sprout-exemplar)
+[![Build Status](https://travis-ci.org/JohnBernas/sprout-mongo.png?branch=master)](https://travis-ci.org/JohnBernas/sprout-mongo)
 
 Chef Recipes to install and configure Mongo DB on OS X
 
