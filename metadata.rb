@@ -1,6 +1,6 @@
 name             'sprout-mongo'
-maintainer       'Pivotal'
-maintainer_email 'sprout-maintainers@pivotallabs.com'
+maintainer       'Myself, for now'
+maintainer_email 'john.bernas@gmail.com'
 license          'MIT'
 description      'Chef Recipes to install and configure Mongo DB on OS X'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
