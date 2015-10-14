@@ -8,8 +8,9 @@ directory launch_agents_path do
 end
 
 plist_filename = node['sprout']['mongo']['plist_filename']
+mongo_name = node['sprout']['mongo']['mongo_name']
 homebrew_root = '/usr/local'
-mongo_install_path = File.join(homebrew_root, 'opt', 'mongodb')
+mongo_install_path = File.join(homebrew_root, 'opt', mongo_name)
 source_plist_filename = File.join(mongo_install_path, plist_filename)
 launch_agent_plist_filename = File.join(launch_agents_path, plist_filename)
 
