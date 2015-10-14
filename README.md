@@ -26,6 +26,7 @@ bundle exec soloist
 
 * `plist_filename` &mdash; The name of the LaunchAgent plist file in the homebrew package to load; default is `'homebrew.mxcl.mongodb.plist'`
 * `mongo_name` &mdash; The name of the mongo version you are using. You may need to change this when using a specific version of mongodb; default is `'mongodb'`
+* `mongo_package` &mdash; The name of the homebrew package to install. You will need to change this when using a specific version of mongodb; default is `'mongodb'`
 
 ### Recipes
 
