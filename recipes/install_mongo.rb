@@ -14,6 +14,6 @@ end
 
 directory data_directory do
   action :create
-  user node['current_user']
+  user node['sprout']['user']
   not_if { node['sprout']['mongo']['preserve_dbs'] }
 end
